@@ -12,7 +12,7 @@ function render() {
 	const Component = require("./containers/Root.js").default;
 	ReactDOM.render(
 		<AppContainer>
-			<Component />
+			<Component/>
 		</AppContainer>,
 		document.getElementById('root')
 	);
