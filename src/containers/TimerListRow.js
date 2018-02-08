@@ -29,7 +29,7 @@ class TimerListRow extends React.Component {
   render() {
     return (
       <tr
-        id={`timerListRow${this.props.id}  hi there`}
+        id={`timerListRow${this.props.id}`}
         onClick={this.setSelected}
         style={this.getStyle()}>
         <td> {this.props.id}</td><td> {this.props.start}</td><td>{this.props.length}
