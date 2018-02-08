@@ -28,7 +28,7 @@ class TimerListRow extends React.Component {
 
   render() {
     return (
-      <tr className="eventTableRow"
+      <tr
         id={`timerListRow${this.props.id}`}
         onClick={this.setSelected}
         style={this.getStyle()}>
