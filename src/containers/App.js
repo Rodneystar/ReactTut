@@ -18,6 +18,8 @@ class App extends React.Component {
       .then((resp) => {
         resp.data.hostUrl = this.hostUrl
           this.setState(resp.data);
+      }, (reason) => {
+        console.log(reason);
       });
   }
 
@@ -28,6 +30,8 @@ class App extends React.Component {
       .then((response) => {
         console.log(response);
         this.setState({jsonTable: response.data.jsonTable})
+      }, (reason) => {
+        console.log(reason);
       })
 	}
 
@@ -38,8 +42,9 @@ class App extends React.Component {
     console.log("index: " +parms.removeIndex + "command: " + parms.command);
     axios.post(this.hostUrl + "update/", JSON.stringify(parms))
       .then((response) => {
-
         this.setState({jsonTable: response.data.jsonTable})
+      }, (reason) => {
+        console.log(reason);
       })
   }
 
@@ -51,9 +56,10 @@ class App extends React.Component {
       .then((response) => {
         console.log(response);
         this.setState({mode: response.data.mode})
+      }, (reason) => {
+        console.log(reason);
       })
     console.log(mode);
-
   }
 
   render() {
