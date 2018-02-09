@@ -5,11 +5,11 @@ import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import axios from 'axios'
 
-import App from './containers/Root.js'
+import App from './containers/App.js'
 
 
 function render() {
-	const Component = require("./containers/Root.js").default;
+	const Component = require("./containers/App.js").default;
 	ReactDOM.render(
 		<AppContainer>
 			<Component/>
@@ -21,6 +21,6 @@ function render() {
 render(App);
 
 if (module.hot) {
-	module.hot.accept('./containers/Root', () => {
+	module.hot.accept('./containers/App', () => {
 		render()})
 }

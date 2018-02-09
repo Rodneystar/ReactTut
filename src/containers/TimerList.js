@@ -24,6 +24,7 @@ getIsSelected = (index) => {
 }
 
 doRemoveItem = () => {
+  this.props.handleRemove(this.state.removeIndex);
   console.log("remove: " + this.state.removeIndex);
 }
 

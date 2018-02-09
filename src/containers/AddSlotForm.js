@@ -5,7 +5,7 @@ import axios from 'axios';
   class AddSlotForm extends React.Component {
     constructor(props) {
       super(props);
-      this.state = { start : "22:10",
+      this.state = { start : this.getNow(),
                 length: 0 }
     }
 
@@ -16,8 +16,7 @@ import axios from 'axios';
 	}
 
 	handleAdd = (event) => {
-    console.log(this.state.start);
-		this.props.onSubmit(this.state);
+    this.props.onSubmit(this.state);
 	}
 
 	render() {
@@ -41,7 +40,7 @@ import axios from 'axios';
 							}}/>
 
 					<div className="buttonSpacingTop">
-        		<input type="button" value="Add slot" onClick={this.handleAdd}/>
+        		<input type="button" value="Add slot" onClick={this.handleAdd}></input>
 					</div>
 
 	       </span>
