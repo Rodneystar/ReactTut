@@ -3,24 +3,14 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import TimerList from './TimerList.js';
 import AddSlotForm from './AddSlotForm.js';
+import ModeSwitchPane from './ModeSwitchPane.js'
 
 class App extends React.Component {
   constructor() {
     super()
     this.hostUrl = "http://localhost:8000/"
-
-
-    this.state = {jsonTable:
-  					[{onTime:"21:53",length:60},
-             {onTime:"07:50",length:120}],
-  					mode:"OFF",
-  					start:"14:38",
-  					length:0,
-  					removeIndex:-1,
-  					command:""}
-
+    this.state = {jsonTable: []};
             this.getProps();
-
   }
 
   getProps = () => {
@@ -30,7 +20,6 @@ class App extends React.Component {
           this.setState(resp.data);
       });
   }
-
 
 	handleAdd = (parms) => {
 		parms.command = "addtimerevent";
@@ -54,10 +43,24 @@ class App extends React.Component {
       })
   }
 
+  handleModeSwitch = (mode) => {
+    let parms = {command: "mode",
+                  mode: mode}
+
+    axios.post(this.hostUrl + "update/", JSON.stringify(parms))
+      .then((response) => {
+        console.log(response);
+        this.setState({mode: response.data.mode})
+      })
+    console.log(mode);
+
+  }
+
   render() {
     return(
       <div>
         <AddSlotForm onSubmit={this.handleAdd}/>
+        <ModeSwitchPane mode={this.state.mode} handleModeSwitch={this.handleModeSwitch}/>
         <TimerList data={this.state} handleRemove={this.handleRemove}/>
       </div>
     )

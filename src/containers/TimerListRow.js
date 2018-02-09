@@ -10,8 +10,11 @@ class TimerListRow extends React.Component {
   getStyle = () => {
     let selectedStyle = {
       backgroundColor : "#47A5DF",
+      cursor: 'pointer'
     }
-    let unselectedStyle = {}
+    let unselectedStyle = {
+      cursor: 'pointer'
+    }
 
     if(this.props.isSelected){
       console.log( "true: "+ selectedStyle);

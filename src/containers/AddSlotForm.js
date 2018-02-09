@@ -40,7 +40,7 @@ import axios from 'axios';
 							}}/>
 
 					<div className="buttonSpacingTop">
-        		<input type="button" value="Add slot" onClick={this.handleAdd}></input>
+        		<input id="addButton" type="button" value="Add slot" onClick={this.handleAdd}></input>
 					</div>
 
 	       </span>

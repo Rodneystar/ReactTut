@@ -1,7 +1,11 @@
-.buttonSpacingTop {
-  padding-top : 5px;
+
+.buttonSpacingTop input{
+  margin-left : 5px;
 }
 
+#addButton {
+  margin-top: 5px;
+}
 .eventTableRow {
   cursor: pointer;
 }
