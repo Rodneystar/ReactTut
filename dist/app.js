@@ -9982,6 +9982,8 @@ var App = function (_React$Component) {
       _axios2.default.get(this.hostUrl + "update/").then(function (resp) {
         resp.data.hostUrl = _this2.hostUrl;
         _this2.setState(resp.data);
+      }, function (reason) {
+        console.log(reason);
       });
     }
   }, {
@@ -9994,6 +9996,8 @@ var App = function (_React$Component) {
       _axios2.default.post(this.hostUrl + "update/", JSON.stringify(parms)).then(function (response) {
         console.log(response);
         _this3.setState({ jsonTable: response.data.jsonTable });
+      }, function (reason) {
+        console.log(reason);
       });
     }
   }, {
@@ -10005,8 +10009,9 @@ var App = function (_React$Component) {
         command: "removetimerevent" };
       console.log("index: " + parms.removeIndex + "command: " + parms.command);
       _axios2.default.post(this.hostUrl + "update/", JSON.stringify(parms)).then(function (response) {
-
         _this4.setState({ jsonTable: response.data.jsonTable });
+      }, function (reason) {
+        console.log(reason);
       });
     }
   }, {
@@ -10020,6 +10025,8 @@ var App = function (_React$Component) {
       _axios2.default.post(this.hostUrl + "update/", JSON.stringify(parms)).then(function (response) {
         console.log(response);
         _this5.setState({ mode: response.data.mode });
+      }, function (reason) {
+        console.log(reason);
       });
       console.log(mode);
     }
