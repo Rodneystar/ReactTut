@@ -8,7 +8,7 @@ import ModeSwitchPane from './ModeSwitchPane.js'
 class App extends React.Component {
   constructor() {
     super()
-    this.hostUrl = "http://localhost:8080/"
+    this.hostUrl = "http://localhost:8000/"
     this.state = {jsonTable: []};
             this.getProps();
   }
